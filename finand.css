@@ -393,10 +393,11 @@ canvas {
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
-  max-height: 280px;
-  overflow-y: auto;
-  padding-right: 0.3rem;
+  max-height: none;
+  overflow-y: visible;
+  padding-right: 0;
 }
+
 
 .history-list::-webkit-scrollbar { width: 6px; }
 .history-list::-webkit-scrollbar-thumb { background: #555; border-radius: 6px; }
