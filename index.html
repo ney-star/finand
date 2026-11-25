@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso | Gráfico de Ingresos y Retiros</title>
+  <link rel="stylesheet" href="acceso.css">
+</head>
+<body>
+
+  <!-- Luces ambientales igual que en tu dashboard -->
+  <div class="ambient-light light-blue"></div>
+  <div class="ambient-light light-lead"></div>
+
+  <div class="auth-container">
+    <div class="auth-card">
+      
+      <!-- FORMULARIO DE INICIO DE SESIÓN -->
+      <form id="form-login">
+        <div class="top-bar">
+          <span class="badge-top">Iniciar Sesión</span>
+          <h1>Bienvenido</h1>
+          <p class="subtitle">Ingresa tus credenciales para continuar</p>
+        </div>
+
+        <div class="error-box" id="error-login"></div>
+
+        <div class="input-group">
+          <input type="email" id="login-email" required placeholder=" ">
+          <label for="login-email">Correo electrónico</label>
+        </div>
+
+        <div class="input-group pass-group">
+          <input type="password" id="login-pass" required placeholder=" ">
+          <label for="login-pass">Contraseña</label>
+          <button type="button" class="btn-toggle" onclick="togglePass('login-pass', this)">Ver</button>
+        </div>
+
+        <div class="options-row">
+          <label class="remember-label">
+            <input type="checkbox" id="recordarme"> Recordarme
+          </label>
+          <a href="#" class="forgot-link" onclick="recuperarClave(event)">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <button type="submit" class="btn-action" id="btn-ingresar">Ingresar</button>
+        <div class="status-text" id="verificando">Verificando credenciales...</div>
+
+        <div class="switch-footer">
+          ¿No tienes cuenta? <a onclick="cambiarVista('registro')">Regístrate aquí</a>
+        </div>
+      </form>
+
+      <!-- FORMULARIO DE REGISTRO -->
+      <form id="form-registro" class="oculto">
+        <div class="top-bar">
+          <span class="badge-top badge-green">Nuevo Usuario</span>
+          <h1>Crear Cuenta</h1>
+          <p class="subtitle">Regístrate con tu correo y contraseña para entrar</p>
+        </div>
+
+        <div class="error-box" id="error-registro"></div>
+
+        <div class="input-group">
+          <input type="email" id="reg-email" required placeholder=" ">
+          <label for="reg-email">Correo electrónico</label>
+        </div>
+
+        <div class="input-group pass-group">
+          <input type="password" id="reg-pass" required minlength="6" placeholder=" ">
+          <label for="reg-pass">Contraseña (mín. 6 caracteres)</label>
+          <button type="button" class="btn-toggle" onclick="togglePass('reg-pass', this)">Ver</button>
+        </div>
+
+        <button type="submit" class="btn-action btn-register" id="btn-registrar">Registrarse y Entrar</button>
+        <div class="status-text" id="creando-cuenta">Creando cuenta y accediendo...</div>
+
+        <div class="switch-footer">
+          ¿Ya tienes una cuenta? <a onclick="cambiarVista('login')">Inicia sesión</a>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <script src="acceso.js"></script>
+</body>
+</html>
